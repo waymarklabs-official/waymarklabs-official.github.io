@@ -1,0 +1,17 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<title>Connecting…</title>
+<body style="font:16px system-ui;padding:2rem;max-width:32rem;margin:auto">
+<p id="msg">Taking you back to ringhub…</p>
+<p>Nothing happening? Your phone needs Tailscale on. Or copy this page's full address and paste it
+in ringhub under Setup → Integrations → “Finish connecting”.</p>
+<script>
+(function () {
+  var q = location.search;
+  if (!/[?&]state=/.test(q)) { document.getElementById("msg").textContent = "Nothing to do here."; return; }
+  location.replace("https://tesla-stream.tail51b89d.ts.net:8445/oauth/callback" + q);
+})();
+</script>
